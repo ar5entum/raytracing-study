@@ -11,19 +11,18 @@ public class Engine {
     public static void main(String [] args) {
         long start = System.nanoTime();
 
-        int height = 480;
-        int width = 640;
+        int height = 500;
+        int width = 500;
 
         File image = new File("Image.png");
         BufferedImage buffer = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 
-        Sphere solidSphere = new Sphere(50, new Vector3(100,100,100));
-
-        double t = 1;
+        // solidSphere configuration
+        Sphere solidSphere = new Sphere(50, new Vector3(width*0.5,height*0.5,20 ));
 
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                if(solidSphere.Intersect(new Ray(new Vector3(x,y,0), new Vector3(0,0,1)),t)){
+                if(solidSphere.Intersect(new Ray(new Vector3(x,y,0), new Vector3(0,0,1)))){
                 buffer.setRGB(x,y,700);
             }
                 else{

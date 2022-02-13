@@ -26,7 +26,7 @@ public class Vector3 {
     }
 
     public static double dotProduct(Vector3 a, Vector3 b){
-        return a.x * b.x + a.y * b.y + a.x * b.z;
+        return a.x * b.x + a.y * b.y + a.z * b.z;
     }
 
     public Vector3 crossProduct(Vector3 vec){

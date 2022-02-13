@@ -13,7 +13,7 @@ public class Sphere {
 
     };
 
-    public boolean Intersect(Ray ray, double t){
+    public boolean Intersect(Ray ray){
         Vector3 origin = ray.getOrigin();
         Vector3 direction = ray.getDirection();
 
@@ -22,10 +22,6 @@ public class Sphere {
         double c = Vector3.dotProduct(oc, oc) - radius*radius;
         double disc = b*b - 4*c;
         if (disc < 1e-4) return false;
-        disc = Math.sqrt(disc);
-        double t0 = - b - disc;
-        double t1 = - b + disc;
-        t = Math.min(t0, t1);
         return true;
 
     }
